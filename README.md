@@ -27,29 +27,28 @@ Coming Soon!
 ## Data Wrangling
 1. I dropped initial unnecessary columns: "id", "uri", and "Unnamed:0". 
 2. Then I transformed my release_date from an object to a datetime format
-  - This will make it easier to work with later for my visualizations
+     - This will make it easier to work with later for my visualizations
 3. I changed our song times from milliseconds to minutes
-  - I will keep both in but I am used to songs being in minutes. However, I think that milliseconds may play a role in our models, so I will keep it in as well.
+     - I will keep both in but I am used to songs being in minutes. However, I think that milliseconds may play a role in our models, so I will keep it in as well.
 4. Lastly, I dropped all songs that had a popularity of "0".(Which totaled 54 songs)
-  - In my data exploration, I determined that these songs were either "Karaoke" or "Voice Memo" versions. This would have a big impact on our models, so I removed them from our dataset
+     - In my data exploration, I determined that these songs were either "Karaoke" or "Voice Memo" versions. This would have a big impact on our models, so I removed them from our dataset
 
 
 
 ## Data Exploration
 
 1. I discovered that Instrumentalness and Popularity had minimums of "0"
-  - I left instrumentalness alone since it didn't seems to affect our outcomes
-  - Popularity, however, was removed since that is our dependent variable and would skew our models
+     - I left instrumentalness alone since it didn't seems to affect our outcomes
+     - Popularity, however, was removed since that is our dependent variable and would skew our models
 
 2. Correlation
-  - Loudness/Energy: Highly Correlated
-  - Speechiness/Acousticness: Slight Correlation
-  - Most other variables are not correlated or are negatively correlated
+     - Loudness/Energy: Highly Correlated
+     - Speechiness/Acousticness: Slight Correlation
+     - Popularity/Instrumentalness: Moderately, Negatively Correlated
+     - Energy/Acousticness: Highly, Negatively Correlated
+     - Loudness/Acousticness: Highly, Negatively Correlated
 
-3. Built a correlation matrix to view correlation between all of the variables
-   * Being a smoker seems to have a high correlation in the charges for individuals
-   * We will not include the smoker variables in our Statistical Analysis to ensure the other variables 
-     have a significant impact charges and not bias our modeling
+
      
 Here is the correlation matrix:
 <img style="display: inline; margin: 0 5px;" title="Correlation Matrix" src="img/corr_matrix.png" alt="" width="800" height="300"/>

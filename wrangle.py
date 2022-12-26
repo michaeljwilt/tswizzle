@@ -17,7 +17,7 @@ swift.head()
 
 #Drop Uneccessary Columns
 #%%
-swift.drop(["id","uri"], axis=1, inplace=True)
+swift.drop(["id", "uri", "Unnamed: 0"], axis=1, inplace=True)
 
 
 #Convert release_date from object to datetime
@@ -85,3 +85,18 @@ swift1.loc[swift["popularity"] == 0]
 #Correlation Matrix to see correlation between our variables
 #%%
 swift1.corr()
+
+
+
+
+#--------------------Preparing for Statisticalk Modeling--------------------#
+####
+## Dependent Variable = Popularity
+##IV = (acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness, tempo, 
+#valence, duration_min release_year, release_month, Track Number, 
+#(if the name is in the title of the album or if it's not))
+
+
+#Export file as csv for stats use in R
+#%%
+# swift1.to_csv(r'/Users/michaelwilt/Desktop/taylorSwiftProject/forStats.csv', index=False)
